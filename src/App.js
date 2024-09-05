@@ -26,7 +26,12 @@ function App() {
 
   const handleAddUser = () => {
     if (person) {
-      setUsers((prevUsers) => [...prevUsers, person]);
+      const isDuplicate = users.some((user) => user.email === person.email);
+      if (isDuplicate) {
+        alert("Bu kullanıcı zaten daha önce eklenmiş!");
+      } else {
+        setUsers((prevUsers) => [...prevUsers, person]);
+      }
     }
   };
 
