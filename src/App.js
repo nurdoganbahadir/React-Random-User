@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import mailSvg from "./assets/mail.svg";
 import manSvg from "./assets/man.svg";
 import womanSvg from "./assets/woman.svg";
@@ -14,6 +14,47 @@ const url = "https://randomuser.me/api/";
 const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
 
 function App() {
+  const [person, setPerson] = useState({});
+  const [title, setTitle] = useState("name");
+  const [userValue, setUserValue] = useState("");
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const getUser = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const user = data.results[0];
+    setPerson(user);
+    setTitle("My name is");
+    setUserValue(`${user.name.first} ${user.name.last}`);
+  };
+
+  const handleValue = (e) => {
+    if (e.target.dataset.label === "name") {
+      setTitle("My name is");
+      setUserValue(`${person.name.first} ${person.name.last}`);
+    } else if (e.target.dataset.label === "email") {
+      setTitle("email");
+      setUserValue(person.email);
+    } else if (e.target.dataset.label === "age") {
+      setTitle("age");
+      setUserValue(person.dob.age);
+    } else if (e.target.dataset.label === "street") {
+      setTitle("street");
+      setUserValue(
+        `${person.location.street.number} ${person.location.street.name}`
+      );
+    } else if (e.target.dataset.label === "phone") {
+      setTitle("phone");
+      setUserValue(person.phone);
+    } else if (e.target.dataset.label === "password") {
+      setTitle("password");
+      setUserValue(person.login.password);
+    }
+  };
+
   return (
     <main>
       <div className="block bcg-orange">
@@ -21,9 +62,13 @@ function App() {
       </div>
       <div className="block">
         <div className="container">
-          <img src={defaultImage} alt="random user" className="user-img" />
-          <p className="user-title">My ... is</p>
-          <p className="user-value"></p>
+          <img
+            src={person.picture?.large || defaultImage}
+            alt="random user"
+            className="user-img"
+          />
+          <p className="user-title">{title}</p>
+          <p className="user-value">{userValue}</p>
           <div className="values-list">
             <button className="icon" data-label="name">
               <img src={womanSvg} alt="user" id="iconImg" />
