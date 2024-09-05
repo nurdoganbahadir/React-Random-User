@@ -32,25 +32,26 @@ function App() {
   };
 
   const handleValue = (e) => {
-    if (e.target.dataset.label === "name") {
+    const label = e.currentTarget.dataset.label; // dataset'i currentTarget'tan almak
+    if (label === "name") {
       setTitle("My name is");
       setUserValue(`${person.name.first} ${person.name.last}`);
-    } else if (e.target.dataset.label === "email") {
-      setTitle("email");
+    } else if (label === "email") {
+      setTitle("My email is");
       setUserValue(person.email);
-    } else if (e.target.dataset.label === "age") {
-      setTitle("age");
+    } else if (label === "age") {
+      setTitle("My age is");
       setUserValue(person.dob.age);
-    } else if (e.target.dataset.label === "street") {
-      setTitle("street");
+    } else if (label === "street") {
+      setTitle("My street is");
       setUserValue(
         `${person.location.street.number} ${person.location.street.name}`
       );
-    } else if (e.target.dataset.label === "phone") {
-      setTitle("phone");
+    } else if (label === "phone") {
+      setTitle("My phone is");
       setUserValue(person.phone);
-    } else if (e.target.dataset.label === "password") {
-      setTitle("password");
+    } else if (label === "password") {
+      setTitle("My password is");
       setUserValue(person.login.password);
     }
   };
@@ -70,22 +71,46 @@ function App() {
           <p className="user-title">{title}</p>
           <p className="user-value">{userValue}</p>
           <div className="values-list">
-            <button className="icon" data-label="name">
+            <button
+              className="icon"
+              data-label="name"
+              onMouseEnter={handleValue}
+            >
               <img src={womanSvg} alt="user" id="iconImg" />
             </button>
-            <button className="icon" data-label="email">
+            <button
+              className="icon"
+              data-label="email"
+              onMouseEnter={handleValue}
+            >
               <img src={mailSvg} alt="mail" id="iconImg" />
             </button>
-            <button className="icon" data-label="age">
+            <button
+              className="icon"
+              data-label="age"
+              onMouseEnter={handleValue}
+            >
               <img src={womanAgeSvg} alt="age" id="iconImg" />
             </button>
-            <button className="icon" data-label="street">
+            <button
+              className="icon"
+              data-label="street"
+              onMouseEnter={handleValue}
+            >
               <img src={mapSvg} alt="map" id="iconImg" />
             </button>
-            <button className="icon" data-label="phone">
+            <button
+              className="icon"
+              data-label="phone"
+              onMouseEnter={handleValue}
+            >
               <img src={phoneSvg} alt="phone" id="iconImg" />
             </button>
-            <button className="icon" data-label="password">
+            <button
+              className="icon"
+              data-label="password"
+              onMouseEnter={handleValue}
+            >
               <img src={padlockSvg} alt="lock" id="iconImg" />
             </button>
           </div>
