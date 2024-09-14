@@ -1,75 +1,30 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
+# Hi I'm Nurdoğan Bahadır 👋. Welcome to my Todo App Project with React.
 
-# Random User App
+This application was realized with the api provided to me by Clarusway. React was used while developing the application. UseState vs useEffect hooks were used. The purpose of the application is to see the information of random users coming to the ui and add them to our table if we want.
 
-## Description
+# Live Link of the Project
 
-Project aims to create a Random User App.
+[Click Me](https://random-user-nurdoganbahadir.netlify.app)
 
-## Problem Statement
+# Libraries and Technologies I use
 
-- We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
+- useState
+- useEffect
+- react bootstrap
+- bootstrap
+- react icons
+- axios
+- API
+  
 
-## Project Skeleton
+# How to install
 
-```
-03 - Random User App
-|
-|----readme.md         # Given to the students (Definition of the project)
-SOLUTION
-├── public
-│     └── index.html
-├── src
-│    ├── assets.js
-│    │       └── [images]
-│    ├── App.js
-│    ├── App.css
-│    ├── index.js
-│    └── index.css
-├── package.json
-└── yarn.lock
-```
+In the project directory, you can run:
 
-## Expected Outcome
+### `npm start`
+
+
+# How does my project look
+
 
 ![Project Snapshot](./random-user-app.gif)
-
-## Objective
-
-Build a Random User App using ReactJS.
-
-### At the end of the project, following topics are to be covered;
-
-- HTML
-
-- CSS
-
-- JS
-
-- ReactJS
-
-### At the end of the project, students will be able to;
-
-- Improve coding skills within HTML & CSS & JS & ReactJS.
-
-- Use git commands (push, pull, commit, add etc.) and Github as Version Control System.
-
-## Steps to Solution
-
-- Step 1: Create React App using `yarn && yarn start`.
-
-- Step 2: Build Random User App fetching data from `https://randomuser.me/api/` using `fetch` or `axios`.
-
-- Step 3: Push your application into your own public repo on Github.
-
-- Step 4: Add project gif to your project and README.md file.
-
-## Notes
-
-- You can add additional functionalities and design to your app.
-
-**<p align="center">&#9786; Happy Coding &#9997;</p>**
-## Demo
-
-[Live](https://randomuser-two-cw.vercel.app/)
