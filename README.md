@@ -1,4 +1,4 @@
-# Hi I'm Nurdoğan Bahadır 👋. Welcome to my Todo App Project with React.
+# Hi I'm Nurdoğan Bahadır 👋. Welcome to my Random User App Project with React.
 
 This application was realized with the api provided to me by Clarusway. React was used while developing the application. UseState vs useEffect hooks were used. The purpose of the application is to see the information of random users coming to the ui and add them to our table if we want.
 
