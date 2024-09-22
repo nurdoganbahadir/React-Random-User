@@ -21,6 +21,10 @@ This application was realized with the api provided to me by Clarusway. React wa
 
 In the project directory, you can run:
 
+### `npm install`
+
+and
+
 ### `npm start`
 
 
